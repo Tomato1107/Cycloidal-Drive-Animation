@@ -1,7 +1,12 @@
 # Cycloidal-Drive-Animation
 Based on matplotlib
 
-Need pip install numpy
+Need 
+pip install numpy
+pip install matplotlib
+
+Here is the demo vedio
+Cycloid Drives Animation https://youtu.be/wV8ygmoxS0c via @YouTube 
 
 Hope anybody else to improve the scripits!
 
