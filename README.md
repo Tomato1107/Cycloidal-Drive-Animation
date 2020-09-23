@@ -3,6 +3,7 @@ Based on matplotlib
 
 Need 
 pip install numpy
+
 pip install matplotlib
 
 Here is the demo vedio
