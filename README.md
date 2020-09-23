@@ -3,9 +3,9 @@ Based on matplotlib
 
 Need pip install numpy
 
-Hope anybody esle to improve the scripits!
+Hope anybody else to improve the scripits!
 
-Got the idea from following:
+Got the idea from the following:
 https://woodencaliper.hatenablog.com/entry/2018/11/19/003515
 
 You can use the paramaters from the GUI and draw your own cycloid drives in 3D software from the following steps.
