@@ -17,5 +17,5 @@ https://woodencaliper.hatenablog.com/entry/2018/11/19/003515
 You can use the paramaters from the GUI and draw your own cycloid drives in 3D software from the following steps.
 https://www.youtube.com/watch?v=guvatctnjww
 
-or change the formula form according to the following pdf:
+or put the paramaters into the formula mentioned in the following pdf:
 https://blogs.solidworks.com/teacher/wp-content/uploads/sites/3/Building-a-Cycloidal-Drive-with-SOLIDWORKS.pdf
