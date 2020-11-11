@@ -569,16 +569,16 @@ def update_inner_pinA(e,Rm, phi):
 
 ##ehypocycloidA:
 
-rc = (n+1)*(RD/n)
+rc = (n-1)*(RD/n)
 rm = (RD/n)
-xa = (rc-rm)*np.cos(t)+e*np.cos((rc-rm)/rm*t)
-ya = (rc-rm)*np.sin(t)-e*np.sin((rc-rm)/rm*t)
+xa = (rc+rm)*np.cos(t)-e*np.cos((rc+rm)/rm*t)
+ya = (rc+rm)*np.sin(t)-e*np.sin((rc+rm)/rm*t)
 
-dxa = (rc-rm)*(-np.sin(t)-(e/rm)*np.sin((rc-rm)/rm*t))
-dya = (rc-rm)*(np.cos(t)-(e/rm)*np.cos((rc-rm)/rm*t))
+dxa = (rc+rm)*(-np.sin(t)+(e/rm)*np.sin((rc+rm)/rm*t))
+dya = (rc+rm)*(np.cos(t)-(e/rm)*np.cos((rc+rm)/rm*t))
 
-x = xa - rd/np.sqrt(dxa**2 + dya**2)*(-dya) + e
-y = ya - rd/np.sqrt(dxa**2 + dya**2)*dxa
+x = xa + rd/np.sqrt(dxa**2 + dya**2)*(-dya) + 2*e
+y = ya + rd/np.sqrt(dxa**2 + dya**2)*dxa
 ehypocycloidA, = ax.plot(x,y,'r-')
 ##driver line and dot: (rc+rm) - rd
 #self.eline, = self.ax.plot([(rc+rm) - rd, 0],[0,0],'r-')
