@@ -194,7 +194,7 @@ def pin_update(n,d,D,phi):
             l31.set_data(x,y)
         if i == 32:
             l32.set_data(x,y)           
-        if i == 133:
+        if i == 33:
             l33.set_data(x,y)        
         if i == 34:
             l34.set_data(x,y)
