@@ -808,10 +808,10 @@ def update_ehypocycloid_Pin(lamuda,e,n,D,d, phis):
             #lamuda = 0.9
             RD=D/2
             rd=d/2
-            rc = (n)*(RD/n)
-            rm = (RD/n)
-            xa = (rc+rm)*np.cos(t)-e*lamuda*np.cos((rc+rm)/rm*t)-rd*(np.cos(t) - lamuda*np.cos((rc+rm)/rm*t))/np.sqrt(1 + lamuda**2 - 2*lamuda*np.cos(rc/rm*t)) 
-            ya = (rc+rm)*np.sin(t)-e*lamuda*np.sin((rc+rm)/rm*t)-rd*(np.sin(t) - lamuda*np.sin((rc+rm)/rm*t))/np.sqrt(1 + lamuda**2 - 2*lamuda*np.cos(rc/rm*t)) 
+            rc = (n)*(RD/(n+1))
+            rm = (RD/(n+1))
+            xa = (rc+rm)*np.cos(t)-e*lamuda*np.cos((rc+rm)/rm*t)-(rd-e)*(np.cos(t) - lamuda*np.cos((rc+rm)/rm*t))/np.sqrt(1 + lamuda**2 - 2*lamuda*np.cos(rc/rm*t)) 
+            ya = (rc+rm)*np.sin(t)-e*lamuda*np.sin((rc+rm)/rm*t)-(rd-e)*(np.sin(t) - lamuda*np.sin((rc+rm)/rm*t))/np.sqrt(1 + lamuda**2 - 2*lamuda*np.cos(rc/rm*t)) 
 
             x = (xa)
             y = (ya)
@@ -834,10 +834,10 @@ def update_ehypocycloid_Pin(lamuda,e,n,D,d, phis):
             #lamuda = 0.9
             RD=D/2
             rd=d/2
-            rc = (n)*(RD/n)
-            rm = (RD/n)
-            xa = (rc+rm)*np.cos(t)-e*lamuda*np.cos((rc+rm)/rm*t)-rd*(np.cos(t) - lamuda*np.cos((rc+rm)/rm*t))/np.sqrt(1 + lamuda**2 - 2*lamuda*np.cos(rc/rm*t)) 
-            ya = (rc+rm)*np.sin(t)-e*lamuda*np.sin((rc+rm)/rm*t)-rd*(np.sin(t) - lamuda*np.sin((rc+rm)/rm*t))/np.sqrt(1 + lamuda**2 - 2*lamuda*np.cos(rc/rm*t)) 
+            rc = (n)*(RD/(n+1))
+            rm = (RD/(n+1))
+            xa = (rc+rm)*np.cos(t)-e*lamuda*np.cos((rc+rm)/rm*t)-(rd-e)*(np.cos(t) - lamuda*np.cos((rc+rm)/rm*t))/np.sqrt(1 + lamuda**2 - 2*lamuda*np.cos(rc/rm*t)) 
+            ya = (rc+rm)*np.sin(t)-e*lamuda*np.sin((rc+rm)/rm*t)-(rd-e)*(np.sin(t) - lamuda*np.sin((rc+rm)/rm*t))/np.sqrt(1 + lamuda**2 - 2*lamuda*np.cos(rc/rm*t)) 
 
             x = (xa)*np.cos(phis/(n))-(ya)*np.sin(phis/(n)) 
             y = (xa)*np.sin(phis/(n))+(ya)*np.cos(phis/(n))    
