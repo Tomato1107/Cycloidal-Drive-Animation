@@ -89,7 +89,7 @@ def update_inner_pinA(e,Rm, phi):
 ##inner pinC:
 inner_pinC, = ax.plot([0],[0],'r-.')
 
-def update_inner_pinC(e,D, phi):
+def update_inner_pinC(e,D, N, phi):
     x = (D/2)*np.cos(t)*np.cos(-phi/(N)) - (D/2)*np.sin(t)*np.sin(-phi/(N)) +e*np.cos(phi)
     y = (D/2)*np.cos(t)*np.sin(-phi/(N)) + (D/2)*np.sin(t)*np.cos(-phi/(N)) +e*np.sin(phi)
     inner_pinC.set_data(x,y)
@@ -203,7 +203,7 @@ def animate(frame):
 
 
     update_ehypocycloidD(se,sN,sD,sd, phi)
-    update_inner_pinC(se,sD, phi)
+    update_inner_pinC(se,sD,sN, phi)
 
     fig.canvas.draw_idle()
 
