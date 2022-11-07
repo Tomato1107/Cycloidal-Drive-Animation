@@ -13,361 +13,44 @@ ax.set_aspect('equal')
 plt.xlim(-1.4*40,1.4*40)
 plt.ylim(-1.4*40,1.4*40)
 #plt.grid()
-t = np.linspace(0, 2*np.pi, 2000)
+t = np.linspace(0, 2*np.pi, 4000)
 delta = 1
-e =2
-n=10
-RD=40
-rd=5
-#plt.grid()
+
+
 ## draw pin
-l0, = ax.plot([], [], 'r-')
-l1, = ax.plot([], [], 'r-')
-l2, = ax.plot([], [], 'r-')
-l3, = ax.plot([], [], 'r-')        
-l4, = ax.plot([], [], 'r-')
-l5, = ax.plot([], [], 'r-')
-l6, = ax.plot([], [], 'r-')
-l7, = ax.plot([], [], 'r-') 
-l8, = ax.plot([], [], 'r-')
-l9, = ax.plot([], [], 'r-')
-l10, = ax.plot([], [], 'r-') 
-l11, = ax.plot([], [], 'r-')
-l12, = ax.plot([], [], 'r-')
-l13, = ax.plot([], [], 'r-')        
-l14, = ax.plot([], [], 'r-')
-l15, = ax.plot([], [], 'r-')
-l16, = ax.plot([], [], 'r-')
-l17, = ax.plot([], [], 'r-') 
-l18, = ax.plot([], [], 'r-')
-l19, = ax.plot([], [], 'r-')
-l20, = ax.plot([], [], 'r-') 
-l21, = ax.plot([], [], 'r-')
-l22, = ax.plot([], [], 'r-')
-l23, = ax.plot([], [], 'r-')        
-l24, = ax.plot([], [], 'r-')
-l25, = ax.plot([], [], 'r-')
-l26, = ax.plot([], [], 'r-')
-l27, = ax.plot([], [], 'r-') 
-l28, = ax.plot([], [], 'r-')
-l29, = ax.plot([], [], 'r-')
-l30, = ax.plot([], [], 'r-') 
-l31, = ax.plot([], [], 'r-')
-l32, = ax.plot([], [], 'r-')
-l33, = ax.plot([], [], 'r-')        
-l34, = ax.plot([], [], 'r-')
-l35, = ax.plot([], [], 'r-')
-l36, = ax.plot([], [], 'r-')
-l37, = ax.plot([], [], 'r-') 
-l38, = ax.plot([], [], 'r-')
-l39, = ax.plot([], [], 'r-')
-l40, = ax.plot([], [], 'r-') 
-
-
-for i in range(int(10)):
-    x = (5*np.sin(t)+ 40*np.cos(2*i*np.pi/10))
-    y = (5*np.cos(t) + 40*np.sin(2*i*np.pi/10))
-    if i == 0:
-        l0, = ax.plot(x, y,'r-')
-    if i == 1:
-        l1, = ax.plot(x, y,'r-')
-    if i == 2:
-        l2, = ax.plot(x, y,'r-')
-    if i == 3:
-        l3, = ax.plot(x, y,'r-')        
-    if i == 4:
-        l4, = ax.plot(x, y,'r-')
-    if i == 5:
-        l5, = ax.plot(x, y,'r-')
-    if i == 6:
-        l6, = ax.plot(x, y,'r-')
-    if i == 7:
-        l7, = ax.plot(x, y,'r-')  
-    if i == 8:
-        l8, = ax.plot(x, y,'r-')
-    if i == 9:
-        l9, = ax.plot(x, y,'r-')
-    if i == 10:
-        l10, = ax.plot(x, y,'r-') 
-    if i == 11:
-        l11, = ax.plot(x, y,'r-')
-    if i == 12:
-        l12, = ax.plot(x, y,'r-')
-    if i == 13:
-        l13, = ax.plot(x, y,'r-')        
-    if i == 14:
-        l14, = ax.plot(x, y,'r-')
-    if i == 15:
-        l15, = ax.plot(x, y,'r-')
-    if i == 16:
-        l16, = ax.plot(x, y,'r-')
-    if i == 17:
-        l17, = ax.plot(x, y,'r-')  
-    if i == 18:
-        l18, = ax.plot(x, y,'r-')
-    if i == 19:
-        l19, = ax.plot(x, y,'r-')
-    if i == 20:
-        l20, = ax.plot(x, y,'r-')
-    if i == 21:
-        l21, = ax.plot(x, y,'r-')
-    if i == 22:
-        l22, = ax.plot(x, y,'r-')
-    if i == 23:
-        l23, = ax.plot(x, y,'r-')        
-    if i == 24:
-        l24, = ax.plot(x, y,'r-')
-    if i == 25:
-        l25, = ax.plot(x, y,'r-')
-    if i == 26:
-        l26, = ax.plot(x, y,'r-')
-    if i == 27:
-        l27, = ax.plot(x, y,'r-')  
-    if i == 28:
-        l28, = ax.plot(x, y,'r-')
-    if i == 29:
-        l29, = ax.plot(x, y,'r-')
-    if i == 30:
-        l30, = ax.plot(x, y,'r-') 
-    if i == 31:
-        l31, = ax.plot(x, y,'r-')
-    if i == 32:
-        l32, = ax.plot(x, y,'r-')
-    if i == 33:
-        l33, = ax.plot(x, y,'r-')        
-    if i == 34:
-        l34, = ax.plot(x, y,'r-')
-    if i == 35:
-        l35, = ax.plot(x, y,'r-')
-    if i == 36:
-        l36, = ax.plot(x, y,'r-')
-    if i == 37:
-        l37, = ax.plot(x, y,'r-')  
-    if i == 38:
-        l38, = ax.plot(x, y,'r-')
-    if i == 39:
-        l39, = ax.plot(x, y,'r-')
-    if i == 40:
-        l40, = ax.plot(x, y,'r-')
+num_pins = 61
+pins = [ax.plot([], [], 'r-')[0] for n in range(num_pins)]
 
 def draw_pin_init():
-    l0.set_data([0], [0])
-    l1.set_data([0], [0])
-    l2.set_data([0], [0])  
-    l3.set_data([0], [0])
-    l4.set_data([0], [0])
-    l5.set_data([0], [0])
-    l6.set_data([0], [0])
-    l7.set_data([0], [0])
-    l8.set_data([0], [0])
-    l9.set_data([0], [0])
-    l10.set_data([0], [0])
-    l11.set_data([0], [0])
-    l12.set_data([0], [0])  
-    l13.set_data([0], [0])
-    l14.set_data([0], [0])
-    l15.set_data([0], [0])
-    l16.set_data([0], [0])
-    l17.set_data([0], [0])
-    l18.set_data([0], [0])
-    l19.set_data([0], [0])
-    l20.set_data([0], [0])
-    l21.set_data([0], [0])
-    l22.set_data([0], [0])  
-    l23.set_data([0], [0])
-    l24.set_data([0], [0])
-    l25.set_data([0], [0])
-    l26.set_data([0], [0])
-    l27.set_data([0], [0])
-    l28.set_data([0], [0])
-    l29.set_data([0], [0])
-    l30.set_data([0], [0])
-    l31.set_data([0], [0])
-    l32.set_data([0], [0])  
-    l33.set_data([0], [0])
-    l34.set_data([0], [0])
-    l35.set_data([0], [0])
-    l36.set_data([0], [0])
-    l37.set_data([0], [0])
-    l38.set_data([0], [0])
-    l39.set_data([0], [0])
-    l40.set_data([0], [0])  
+    for p in pins:
+        p.set_data([0], [0])
 
-def draw_inner_pin_init():
-    p0.set_data([0], [0])
-    p1.set_data([0], [0])
-    p2.set_data([0], [0])  
-    p3.set_data([0], [0])
-    p4.set_data([0], [0])
-    p5.set_data([0], [0])
-    p6.set_data([0], [0])
-    p7.set_data([0], [0])
-    p8.set_data([0], [0])
-    p9.set_data([0], [0])
-
-def pin_update(n,d,D,phis):
+def pin_update(e, n,d,D,phis):
     for i in range(int(n)):    
         xa = (d/2*np.sin(t)+ D/2*np.cos(2*i*np.pi/n))
         ya = (d/2*np.cos(t) + D/2*np.sin(2*i*np.pi/n))
 
-        #x = xa*np.cos(-phi/(n)+np.pi/(n)) - ya * np.sin(-phi/(n)+np.pi/(n))  + e*np.cos(phi)
-        #y = xa*np.sin(-phi/(n)+np.pi/(n)) + ya * np.cos(-phi/(n)+np.pi/(n))  + e*np.cos(phi)
-
         x = (xa )*np.cos(-phis/(n)+np.pi/(n))-(ya )*np.sin(-phis/(n)+np.pi/(n))  + e*np.cos(phis)
         y = (xa )*np.sin(-phis/(n)+np.pi/(n))+(ya )*np.cos(-phis/(n)+np.pi/(n))  + e*np.sin(phis)
-
-        if i == 0:
-            l0.set_data(x,y)
-        if i == 1:
-            l1.set_data(x,y)
-        if i == 2:
-            l2.set_data(x,y)
-        if i == 3:
-            l3.set_data(x,y)        
-        if i == 4:
-            l4.set_data(x,y)
-        if i == 5:
-            l5.set_data(x,y)
-        if i == 6:
-            l6.set_data(x,y)
-        if i == 7:
-            l7.set_data(x,y)  
-        if i == 8:
-            l8.set_data(x,y)
-        if i == 9:
-            l9.set_data(x,y)
-        if i == 10:
-            l10.set_data(x,y)
-        if i == 11:
-            l11.set_data(x,y)
-        if i == 12:
-            l12.set_data(x,y)           
-        if i == 13:
-            l13.set_data(x,y)        
-        if i == 14:
-            l14.set_data(x,y)
-        if i == 15:
-            l15.set_data(x,y)
-        if i == 16:
-            l16.set_data(x,y)
-        if i == 17:
-            l17.set_data(x,y)
-        if i == 18:
-            l18.set_data(x,y)
-        if i == 19:
-            l19.set_data(x,y)
-        if i == 20:
-            l20.set_data(x,y)
-        if i == 21:
-            l21.set_data(x,y)
-        if i == 22:
-            l22.set_data(x,y)
-        if i == 23:
-            l23.set_data(x,y)        
-        if i == 24:
-            l24.set_data(x,y)
-        if i == 25:
-            l25.set_data(x,y)
-        if i == 26:
-            l26.set_data(x,y)
-        if i == 27:
-            l27.set_data(x,y)  
-        if i == 28:
-            l28.set_data(x,y)
-        if i == 29:
-            l29.set_data(x,y)
-        if i == 30:
-            l30.set_data(x,y)
-        if i == 31:
-            l31.set_data(x,y)
-        if i == 32:
-            l32.set_data(x,y)           
-        if i == 133:
-            l33.set_data(x,y)        
-        if i == 34:
-            l34.set_data(x,y)
-        if i == 35:
-            l35.set_data(x,y)
-        if i == 36:
-            l36.set_data(x,y)
-        if i == 37:
-            l37.set_data(x,y)
-        if i == 38:
-            l38.set_data(x,y)
-        if i == 39:
-            l39.set_data(x,y)
-        if i == 40:
-            l40.set_data(x,y)
+        pins[i].set_data(x,y)    
 
 
 ## draw inner_pin
-p0, = ax.plot([], [], 'y-')
-p1, = ax.plot([], [], 'y-')
-p2, = ax.plot([], [], 'y-')
-p3, = ax.plot([], [], 'y-')        
-p4, = ax.plot([], [], 'y-')
-p5, = ax.plot([], [], 'y-')
-p6, = ax.plot([], [], 'y-')
-p7, = ax.plot([], [], 'y-') 
-p8, = ax.plot([], [], 'y-')
-p9, = ax.plot([], [], 'y-')
+num_inner_pins = 10
+inner_pins = [ax.plot([], [], 'g-')[0] for n in range(num_inner_pins)]
 
-
-for i in range(int(6)):
-    x = (5*np.sin(t)+ 20*np.cos(2*i*np.pi/6))
-    y = (5*np.cos(t) + 20*np.sin(2*i*np.pi/6))
-    if i == 0:
-        p0, = ax.plot(x, y,'y-')
-    if i == 1:
-        p1, = ax.plot(x, y,'y-')
-    if i == 2:
-        p2, = ax.plot(x, y,'y-')
-    if i == 3:
-        p3, = ax.plot(x, y,'y-')        
-    if i == 4:
-        p4, = ax.plot(x, y,'y-')
-    if i == 5:
-        p5, = ax.plot(x, y,'y-')
-    if i == 6:
-        p6, = ax.plot(x, y,'y-')
-    if i == 7:
-        p7, = ax.plot(x, y,'y-')  
-    if i == 8:
-        p8, = ax.plot(x, y,'y-')
-    if i == 9:
-        p9, = ax.plot(x, y,'y-')
-
-
+def draw_inner_pin_init():
+    for p in inner_pins:
+        p.set_data([0], [0])
 
 def inner_pin_update(n,N,rd,Rd,phi):
     for i in range(int(n)):    
         x = (rd*np.sin(t)+ Rd*np.cos(2*i*np.pi/n))*np.cos(-phi/(N-1)) - (rd*np.cos(t) + Rd*np.sin(2*i*np.pi/n))*np.sin(-phi/(N-1))
         y = (rd*np.sin(t)+ Rd*np.cos(2*i*np.pi/n))*np.sin(-phi/(N-1)) + (rd*np.cos(t) + Rd*np.sin(2*i*np.pi/n))*np.cos(-phi/(N-1))
-        if i == 0:
-            p0.set_data(x,y)
-        if i == 1:
-            p1.set_data(x,y)
-        if i == 2:
-            p2.set_data(x,y)
-        if i == 3:
-            p3.set_data(x,y)        
-        if i == 4:
-            p4.set_data(x,y)
-        if i == 5:
-            p5.set_data(x,y)
-        if i == 6:
-            p6.set_data(x,y)
-        if i == 7:
-            p7.set_data(x,y)  
-        if i == 8:
-            p8.set_data(x,y)
-        if i == 9:
-            p9.set_data(x,y)
+        inner_pins[i].set_data(x,y)
 
 ## draw drive_pin
-a = 5*np.sin(t)
-b = 5*np.cos(t) 
-d0, = ax.plot(a, b,'k-', lw=2)
+d0, = ax.plot([0],[0],'k-')
 
 def drive_pin_update(r):
     x = r*np.sin(t)
@@ -376,79 +59,18 @@ def drive_pin_update(r):
 
 
 #inner circle:
-inner_circle1, = ax.plot([], [], 'r-', lw=2)
-inner_circle2, = ax.plot([], [], 'r-', lw=2)
-inner_circle3, = ax.plot([], [], 'r-', lw=2)
-inner_circle4, = ax.plot([], [], 'r-', lw=2)        
-inner_circle5, = ax.plot([], [], 'r-', lw=2)
-inner_circle6, = ax.plot([], [], 'r-', lw=2)
-inner_circle7, = ax.plot([], [], 'r-', lw=2)
-inner_circle8, = ax.plot([], [], 'r-', lw=2) 
-inner_circle9, = ax.plot([], [], 'r-', lw=2)
-inner_circle10, = ax.plot([], [], 'r-', lw=2)
+num_inner_circles = 10
+inner_circles = [ax.plot([], [], 'r-')[0] for n in range(num_inner_circles)]
 
 def draw_inner_circle_init():
-    inner_circle10.set_data([0], [0])
-    inner_circle1.set_data([0], [0])
-    inner_circle2.set_data([0], [0])  
-    inner_circle3.set_data([0], [0])
-    inner_circle4.set_data([0], [0])
-    inner_circle5.set_data([0], [0])
-    inner_circle6.set_data([0], [0])
-    inner_circle7.set_data([0], [0])
-    inner_circle8.set_data([0], [0])
-    inner_circle9.set_data([0], [0])
-
-
-for i in range(6):
-    x = (rd+e)*np.cos(t)+0.5*RD*np.cos(2*i*np.pi/6)+e
-    y = (rd+e)*np.sin(t)+0.5*RD*np.sin(2*i*np.pi/6)
-    if i==0:
-        inner_circle1, = ax.plot(x,y,'r-')
-    if i==1:
-        inner_circle2, = ax.plot(x,y,'r-')
-    if i==2:
-        inner_circle3, = ax.plot(x,y,'r-')
-    if i==3:
-        inner_circle4, = ax.plot(x,y,'r-')
-    if i==4:
-        inner_circle5, = ax.plot(x,y,'r-')
-    if i==5:
-        inner_circle6, = ax.plot(x,y,'r-')
-    if i==6:
-        inner_circle7, = ax.plot(x,y,'r-')
-    if i==7:
-        inner_circle8, = ax.plot(x,y,'r-')
-    if i==8:
-        inner_circle9, = ax.plot(x,y,'r-')
-    if i==9:
-        inner_circle10, = ax.plot(x,y,'r-')   
+    for p in inner_circles:
+        p.set_data([0], [0])
 
 def update_inner_circle(e,n,N,rd,Rd, phi):
-    
     for i in range(int(n)):
         x = ((rd+e)*np.cos(t)+Rd*np.cos(2*i*np.pi/n))*np.cos(-phi/(N-1)) - ((rd+e)*np.sin(t)+Rd*np.sin(2*i*np.pi/n))*np.sin(-phi/(N-1)) + e*np.cos(phi)
         y = ((rd+e)*np.cos(t)+Rd*np.cos(2*i*np.pi/n))*np.sin(-phi/(N-1)) + ((rd+e)*np.sin(t)+Rd*np.sin(2*i*np.pi/n))*np.cos(-phi/(N-1)) + e*np.sin(phi)
-        if i==0:
-            inner_circle1.set_data(x,y)
-        if i==1:
-            inner_circle2.set_data(x,y)
-        if i==2:
-            inner_circle3.set_data(x,y)
-        if i==3:
-            inner_circle4.set_data(x,y)
-        if i==4:
-            inner_circle5.set_data(x,y)
-        if i==5:
-            inner_circle6.set_data(x,y)
-        if i==6:
-            inner_circle7.set_data(x,y)
-        if i==7:
-            inner_circle8.set_data(x,y)
-        if i==8:
-            inner_circle9.set_data(x,y)
-        if i==9:
-            inner_circle10.set_data(x,y)
+        inner_circles[i].set_data(x,y)
  
 ##inner pinA:
 inner_pinA, = ax.plot([0],[0],'r-')
@@ -461,13 +83,11 @@ def update_inner_pinA(e,Rm, phi):
     
     x1 = (Rm+e)*np.cos(phi)+e*np.cos(phi)
     y1 = (Rm+e)*np.sin(phi)+e*np.sin(phi)
-    #self.line.set_data([0,x1],[0,y1])
     dotA.set_data(x1, y1)
 
 
 ##inner pinC:
 inner_pinC, = ax.plot([0],[0],'r-.')
-
 
 def update_inner_pinC(e,D, phi):
     x = (D/2)*np.cos(t)+e*np.cos(phi)
@@ -475,14 +95,8 @@ def update_inner_pinC(e,D, phi):
     inner_pinC.set_data(x,y)
 
 
-
-
-
-
 ##ehypocycloidD:
-
 ehypocycloidD, = ax.plot([0],[0],'b-')
-edotD, = ax.plot([0],[0], 'bo', ms=5)
 
 def update_ehypocycloidD(e,n,D,d, phis):
     RD=D/2
@@ -497,45 +111,7 @@ def update_ehypocycloidD(e,n,D,d, phis):
 
     x = (xa - (rd)/np.sqrt(dxa**2 + dya**2)*(-dya))*np.cos( np.pi/(n+1)) - (ya - (rd)/np.sqrt(dxa**2 + dya**2)*dxa)*np.sin( np.pi/(n+1)) 
     y = (xa - (rd)/np.sqrt(dxa**2 + dya**2)*(-dya))*np.sin( np.pi/(n+1)) + (ya - (rd)/np.sqrt(dxa**2 + dya**2)*dxa)*np.cos( np.pi/(n+1))
-
-
     ehypocycloidD.set_data(x,y)
-
-    #self.eline.set_data([e*np.cos(phis),x[0]],[e*np.sin(phis),y[0]])
-    edotD.set_data(x[0], y[0])
-
-
-##ehypocycloid_Pin1:
-
-
-ehypocycloid_Pin1, = ax.plot([0],[0],'g-')
-edot_Pin1, = ax.plot([0],[0], 'go', ms=5)
-
-def update_ehypocycloid_Pin1(e,n,D,d, phis):
-
-    RD=D/2
-    rd=d/2
-    rc = (n+1)*(RD/n)
-    rm = (RD/n)
-    xa = (rc-rm)*np.cos(t)-e*np.cos((n-1)*t)
-    ya = (rc-rm)*np.sin(t)+e*np.sin((n-1)*t)
-
-    dxa = (rc-rm)*(-np.sin(t)+(e/rm)*np.sin((n-1)*t))
-    dya = (rc-rm)*(np.cos(t)+(e/rm)*np.cos((n-1)*t))
-
-    xa1 = (xa - (rd-e)/np.sqrt(dxa**2 + dya**2)*(-dya))
-    ya1 = (ya - (rd-e)/np.sqrt(dxa**2 + dya**2)*dxa)
-
-    x = (xa1 )*np.cos(-phis/(n))-(ya1 )*np.sin(-phis/(n))  + e*np.cos(phis)  #旋转 + 自转
-    y = (xa1 )*np.sin(-phis/(n))+(ya1 )*np.cos(-phis/(n))  + e*np.sin(phis)
-
-       
-    
-    ehypocycloid_Pin1.set_data(x,y)
-
-    #self.eline.set_data([e*np.cos(phis),x[0]],[e*np.sin(phis),y[0]])
-    edot_Pin1.set_data(x[0], y[0])
-
 
 
 axcolor = 'lightgoldenrodyellow'
@@ -618,7 +194,7 @@ def animate(frame):
     draw_pin_init()
     draw_inner_pin_init()
     draw_inner_circle_init()
-    pin_update(sN,sd,sD,phi)
+    pin_update(se,sN,sd,sD,phi)
     update_inner_pinA(se,sRm, phi)
 
     inner_pin_update(sn,sN,srd,sRd,phi)
@@ -629,7 +205,6 @@ def animate(frame):
     update_ehypocycloidD(se,sN,sD,sd, phi)
     update_inner_pinC(se,sD, phi)
 
-    update_ehypocycloid_Pin1(se,sN,sD,sd, phi)
     fig.canvas.draw_idle()
 
 
