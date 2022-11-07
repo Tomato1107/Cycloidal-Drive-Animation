@@ -90,8 +90,8 @@ def update_inner_pinA(e,Rm, phi):
 inner_pinC, = ax.plot([0],[0],'r-.')
 
 def update_inner_pinC(e,D, phi):
-    x = (D/2)*np.cos(t)+e*np.cos(phi)
-    y = (D/2)*np.sin(t)+e*np.sin(phi)
+    x = (D/2)*np.cos(t)*np.cos(-phi/(N)) - (D/2)*np.sin(t)*np.sin(-phi/(N)) +e*np.cos(phi)
+    y = (D/2)*np.cos(t)*np.sin(-phi/(N)) + (D/2)*np.sin(t)*np.cos(-phi/(N)) +e*np.sin(phi)
     inner_pinC.set_data(x,y)
 
 
