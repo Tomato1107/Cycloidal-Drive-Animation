@@ -18,7 +18,6 @@ delta = 1
 ## draw pin
 num_pins = 61
 pins = [ax.plot([], [], 'k-')[0] for n in range(num_pins)]
-
 def draw_pin_init():
     for p in pins:
         p.set_data([0], [0])
@@ -32,7 +31,6 @@ def pin_update(n,d,D):
 ## draw inner_pin
 num_inner_pins = 10
 inner_pins = [ax.plot([], [], 'g-')[0] for n in range(num_inner_pins)]
-
 def draw_inner_pin_init():
     for p in inner_pins:
         p.set_data([0], [0])
@@ -45,7 +43,6 @@ def inner_pin_update(n,N,rd,Rd,phi):
 
 ## draw drive_pin
 d0, = ax.plot([0],[0],'k-')
-
 def drive_pin_update(r):
     x = r*np.sin(t)
     y = r*np.cos(t)
@@ -54,13 +51,11 @@ def drive_pin_update(r):
 #inner circle:
 num_inner_circles = 10
 inner_circles = [ax.plot([], [], 'r-')[0] for n in range(num_inner_circles)]
-
 def draw_inner_circle_init():
     for p in inner_circles:
         p.set_data([0], [0])
 
 def update_inner_circle(e,n,N,rd,Rd, phi):
-    
     for i in range(int(n)):
         x = ((rd+e)*np.cos(t)+Rd*np.cos(2*i*np.pi/n))*np.cos(-phi/(N-1)) - ((rd+e)*np.sin(t)+Rd*np.sin(2*i*np.pi/n))*np.sin(-phi/(N-1)) + e*np.cos(phi)
         y = ((rd+e)*np.cos(t)+Rd*np.cos(2*i*np.pi/n))*np.sin(-phi/(N-1)) + ((rd+e)*np.sin(t)+Rd*np.sin(2*i*np.pi/n))*np.cos(-phi/(N-1)) + e*np.sin(phi)
@@ -69,7 +64,6 @@ def update_inner_circle(e,n,N,rd,Rd, phi):
 ##inner pin:
 inner_pin, = ax.plot([0],[0],'r-')
 dot, = ax.plot([0],[0], 'ro', ms=5)
-
 def update_inner_pin(e,Rm, phi):
     x = (Rm+e)*np.cos(t)+e*np.cos(phi)
     y = (Rm+e)*np.sin(t)+e*np.sin(phi)
@@ -82,7 +76,6 @@ def update_inner_pin(e,Rm, phi):
 ##ehypocycloid:
 ehypocycloid, = ax.plot([0],[0],'r-')
 edot, = ax.plot([0],[0], 'ro', ms=5)
-
 def update_ehypocycloid(e,n,D,d, phis):
     RD=D/2
     rd=d/2
