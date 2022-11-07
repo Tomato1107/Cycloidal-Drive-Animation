@@ -12,7 +12,7 @@ ax.set_aspect('equal')
 plt.xlim(-1.4*40,1.4*40)
 plt.ylim(-1.4*40,1.4*40)
 #plt.grid()
-t = np.linspace(0, 2*np.pi, 400)
+t = np.linspace(0, 2*np.pi, 4000)
 delta = 1
 
 ## draw pin
