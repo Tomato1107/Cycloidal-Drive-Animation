@@ -93,8 +93,8 @@ def update_hypocycloid(lamuda,e,n,D,d, phis):
     rd=d/2
     rc = (n-1)*(RD/n)
     rm = (RD/n)
-    xa = (rc+rm)*np.cos(t)-e*lamuda*np.cos((rc+rm)/rm*t)-rd*(np.cos(t) - lamuda*np.cos((rc+rm)/rm*t))/np.sqrt(1 + lamuda**2 - 2*lamuda*np.cos(rc/rm*t)) 
-    ya = (rc+rm)*np.sin(t)-e*lamuda*np.sin((rc+rm)/rm*t)-rd*(np.sin(t) - lamuda*np.sin((rc+rm)/rm*t))/np.sqrt(1 + lamuda**2 - 2*lamuda*np.cos(rc/rm*t)) 
+    xa = (rc+rm)*np.cos(t)-e*np.cos((rc+rm)/rm*t)-rd*(np.cos(t) - lamuda*np.cos((rc+rm)/rm*t))/np.sqrt(1 + lamuda**2 - 2*lamuda*np.cos(rc/rm*t)) 
+    ya = (rc+rm)*np.sin(t)-e*np.sin((rc+rm)/rm*t)-rd*(np.sin(t) - lamuda*np.sin((rc+rm)/rm*t))/np.sqrt(1 + lamuda**2 - 2*lamuda*np.cos(rc/rm*t)) 
 
     x = (xa )*np.cos(-phis/(n-1))-(ya )*np.sin(-phis/(n-1))  + e*np.cos(phis)
     y = (xa )*np.sin(-phis/(n-1))+(ya )*np.cos(-phis/(n-1))  + e*np.sin(phis)
