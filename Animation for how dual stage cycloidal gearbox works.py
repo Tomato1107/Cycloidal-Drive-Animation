@@ -4,6 +4,7 @@ import matplotlib.animation as animation
 from matplotlib.widgets import Slider, Button
 
 fig, ax = plt.subplots(figsize=(6,6))
+ax.set_title('Reduction ratio '+(str(int(-224)))+':1')
 plt.subplots_adjust(left=0.15, bottom=0.35)
 
 ax.set_aspect('equal')
@@ -12,7 +13,7 @@ plt.ylim(-1.2*40,1.2*40)
 #plt.grid()
 t = np.linspace(0, 2*np.pi, 4000)
 delta = 1
-
+Output_fig = 0
 
 ## draw pin
 num_pins = 61
@@ -53,6 +54,7 @@ def output_pin_update(n1,n2,d,D,phi):
 
         if n1!=n2:
             j=1/(1-n2/(n2-1)*(n1-1)/n1)
+            #print(j)
             x = (d/2*np.sin(t)+ D/2*np.cos(2*i*np.pi/n1))*np.cos(phi/j+np.pi/n1) - (d/2*np.cos(t) + D/2*np.sin(2*i*np.pi/n1))*np.sin(phi/j+np.pi/n1)
             y = (d/2*np.sin(t)+ D/2*np.cos(2*i*np.pi/n1))*np.sin(phi/j+np.pi/n1) + (d/2*np.cos(t) + D/2*np.sin(2*i*np.pi/n1))*np.cos(phi/j+np.pi/n1)
         if n1==n2:          
@@ -162,7 +164,10 @@ def update(val):
     if sD1>sD:
         ax.set_xlim(-1.2*0.5*sD1,1.2*0.5*sD1)
         ax.set_ylim(-1.2*0.5*sD1,1.2*0.5*sD1)
-
+    if sN1==sN:
+        ax.set_title('None reduction')
+    if sN1!=sN:    
+        ax.set_title('Reduction ratio '+(str(round(1/(1-sN/(sN-1)*(sN1-1)/sN1),2)))+':1')
 
 sli_fm.on_changed(update)
 sli_Rm.on_changed(update)
@@ -173,8 +178,10 @@ sli_d.on_changed(update)
 sli_D.on_changed(update)
 sli_D1.on_changed(update)
 
-resetax = plt.axes([0.8, 0.0, 0.1, 0.04])
+resetax = plt.axes([0.84, 0.02, 0.12, 0.04])
+output_tax = plt.axes([0.84, 0.08, 0.12, 0.04])
 button = Button(resetax, 'Reset', color=axcolor, hovercolor='0.975')
+button_output = Button(output_tax, 'Equation', color=axcolor, hovercolor='0.975')
 
 def reset(event):
     sli_fm.reset()    
@@ -186,9 +193,15 @@ def reset(event):
     sli_D.reset()
     sli_D1.reset()
 
+def output(event):
+    global Output_fig
+    Output_fig = 1
+
 button.on_clicked(reset)
+button_output.on_clicked(output)
 
 def animate(frame):
+    global Output_fig
     sfm = sli_fm.val
     sRm = sli_Rm.val
     se = sli_e.val
@@ -200,6 +213,41 @@ def animate(frame):
     frame = frame+1
     phi = 2*np.pi*frame/sfm
 
+    if  Output_fig == 1:
+        RD=sD/2
+        rd=sd/2
+        rc = (sN-1)*(RD/sN)
+        rm = (RD/sN)
+        R_EN = RD/(se*sN)
+        X = "({}*cos(t)) - ( {}*cos( t+arctan( sin({}*t)/({} - cos({}*t)) ) ) ) - ({}*cos({}*t)) ".format((rc+rm),rd,(1-sN),R_EN,(1-sN),se,sN)
+        Y = "(-{}*sin(t)) + ( {}*sin( t+arctan( sin({}*t)/({} - cos({}*t)) ) ) ) + ({}*sin({}*t)) ".format((rc+rm),rd,(1-sN),R_EN,(1-sN),se,sN)
+        
+        ## You can also use the following equition
+        #X = "({}*cos(t)-{}*cos({}*t)-{}*(cos(t)-{}*cos({}*t))/sqrt(1+{}-{}*cos({}*t))) ".format((RD),se,(RD/rm),rd,(se/rm),(RD/rm),(se/rm)**2,2*(se/rm),(rc/rm))
+        #Y = "({}*sin(t)-{}*sin({}*t)-{}*(sin(t)-{}*sin({}*t))/sqrt(1+{}-{}*cos({}*t))) ".format((RD),se,(RD/rm),rd,(se/rm),(RD/rm),(se/rm)**2,2*(se/rm),(rc/rm))
+        
+        print("blue cycloid drive equition")
+        print("X="+X)
+        print("y="+Y)
+        print(" ")
+
+        RD1=sD1/2
+        rd=sd/2
+        rc1 = (sN1-1)*(RD1/sN1)
+        rm1 = (RD1/sN1)
+        R_EN1 = RD1/(se*sN1)
+        X = "({}*cos(t)) - ( {}*cos( t+arctan( sin({}*t)/({} - cos({}*t)) ) ) ) - ({}*cos({}*t)) ".format((rc1+rm1),rd,(1-sN1),R_EN1,(1-sN1),se,sN1)
+        Y = "(-{}*sin(t)) + ( {}*sin( t+arctan( sin({}*t)/({} - cos({}*t)) ) ) ) + ({}*sin({}*t)) ".format((rc1+rm1),rd,(1-sN1),R_EN1,(1-sN1),se,sN1)
+        
+        ## You can also use the following equition
+        #X = "({}*cos(t) - {}*cos({}*t) - {}*(cos(t) - {}*cos({}*t))/sqrt(1 + {} - {}*cos({}*t))) ".format((RD1),se,(RD1/rm1),rd,(se/rm1),(RD1/rm1),(se/rm1)**2,2*(se/rm1),(rc1/rm1))
+        #Y = "({}*sin(t) - {}*sin({}*t) - {}*(sin(t) - {}*sin({}*t))/sqrt(1 + {} - {}*cos({}*t))) ".format((RD1),se,(RD1/rm1),rd,(se/rm1),(RD1/rm1),(se/rm1)**2,2*(se/rm1),(rc1/rm1))
+        
+        print("red cycloid drive equition")
+        print("X="+X)
+        print("y="+Y)    
+        print(" ")    
+        Output_fig = 0
 
     draw_pin_init()
     draw_output_pin_init()
