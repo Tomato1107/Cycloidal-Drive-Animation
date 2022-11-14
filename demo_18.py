@@ -61,14 +61,14 @@ def update_hypocycloidA(n1,D,phis):
     t2 = np.linspace(-2*np.pi/(n-1), 0, 2000)
 
     for i in range(int((n-1)/2)):
-        xa = (RD)*np.cos(t1)-rm*np.cos((rc+rm)/rm*t1)
-        ya = (RD)*np.sin(t1)-rm*np.sin((rc+rm)/rm*t1)
+        xa = (rc+rm)*np.cos(t1)-rm*np.cos((rc+rm)/rm*t1)
+        ya = (rc+rm)*np.sin(t1)-rm*np.sin((rc+rm)/rm*t1)
         x = (xa )*np.cos(-phis/((n-1)/2) -np.pi/(n-1) - (4*i)*np.pi/(n-1))-(ya )*np.sin(-phis/((n-1)/2) -np.pi/(n-1) - (4*i)*np.pi/(n-1))  + 2*rm*np.cos(phis)
         y = (xa )*np.sin(-phis/((n-1)/2) -np.pi/(n-1) - (4*i)*np.pi/(n-1))+(ya )*np.cos(-phis/((n-1)/2) -np.pi/(n-1) - (4*i)*np.pi/(n-1))  + 2*rm*np.sin(phis)
         hypocycloidA[i].set_data(x,y)
 
-        xa1 = (rc-rm)*np.cos(t2)+rm*np.cos((n-2)*t2)
-        ya1 = (rc-rm)*np.sin(t2)-rm*np.sin((n-2)*t2) 
+        xa1 = (rc-rm)*np.cos(t2)+rm*np.cos((rc-rm)/rm*t2)
+        ya1 = (rc-rm)*np.sin(t2)-rm*np.sin((rc-rm)/rm*t2) 
         x1 = (xa1 )*np.cos(-phis/((n-1)/2) -np.pi/(n-1) + (4*i)*np.pi/(n-1))-(ya1 )*np.sin(-phis/((n-1)/2) -np.pi/(n-1) + (4*i)*np.pi/(n-1))  + 2*rm*np.cos(phis)
         y1 = (xa1 )*np.sin(-phis/((n-1)/2) -np.pi/(n-1) + (4*i)*np.pi/(n-1))+(ya1 )*np.cos(-phis/((n-1)/2) -np.pi/(n-1) + (4*i)*np.pi/(n-1))  + 2*rm*np.sin(phis)    
         hypocycloidA1[i].set_data(x1,y1)
@@ -95,14 +95,14 @@ def update_hypocycloidB(n1,D, phis):
     t2 = np.linspace(0, 2*np.pi/(n+1), 2000)
 
     for i in range(int((n+1)/2)):    
-        xa = (rc+rm)*np.cos(t1)-rm*np.cos((n+2)*t1)
-        ya = (rc+rm)*np.sin(t1)-rm*np.sin((n+2)*t1)
+        xa = (rc+rm)*np.cos(t1)-rm*np.cos((rc+rm)/rm*t1)
+        ya = (rc+rm)*np.sin(t1)-rm*np.sin((rc+rm)/rm*t1)
         x = (xa )*np.cos( np.pi/(n+1) - (4*i)*np.pi/(n+1))-(ya )*np.sin( np.pi/(n+1) - (4*i)*np.pi/(n+1))  
         y = (xa )*np.sin( np.pi/(n+1) - (4*i)*np.pi/(n+1))+(ya )*np.cos( np.pi/(n+1) - (4*i)*np.pi/(n+1))    
         hypocycloidB[i].set_data(x,y)    
 
-        xa1 = (rc-rm)*np.cos(t2)+rm*np.cos((n)*t2)
-        ya1 = (rc-rm)*np.sin(t2)-rm*np.sin((n)*t2)
+        xa1 = (rc-rm)*np.cos(t2)+rm*np.cos((rc-rm)/rm*t2)
+        ya1 = (rc-rm)*np.sin(t2)-rm*np.sin((rc-rm)/rm*t2)
         x1 = (xa1 )*np.cos( np.pi/(n+1) - (4*i)*np.pi/(n+1))-(ya1 )*np.sin( np.pi/(n+1) - (4*i)*np.pi/(n+1))  
         y1 = (xa1 )*np.sin( np.pi/(n+1) - (4*i)*np.pi/(n+1))+(ya1 )*np.cos( np.pi/(n+1) - (4*i)*np.pi/(n+1))   
         hypocycloidB1[i].set_data(x1,y1)
